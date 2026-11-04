@@ -1,22 +1,30 @@
 # tech-notes
 
-> 技术笔记：系统、网络、性能 · Notes on systems, networking & performance
+线上和自建环境里踩过的坑，按时间倒序。命令都能直接复制跑。
 
-## 分类 / Categories
+## 索引
 
-| 主题 / Topic | 内容 / Content |
-| --- | --- |
-| Linux | 内核参数、文件系统、排障 / kernel, filesystem, troubleshooting |
-| Network | TCP/IP、TLS、抓包分析 / TCP/IP, TLS, packet analysis |
-| Performance | 压测、火焰图、调优 / benchmarking, flamegraphs, tuning |
-| Ops | 部署、监控、备份 / deploy, monitoring, backup |
+| 日期 | 主题 | 关键词 | 状态 |
+| :--- | :--- | :--- | :--- |
+| 2026-11 | [用 eBPF 抓 TCP 重传，卡在 ring buffer 了](ebpf-tcp-retrans.md) | eBPF · TCP · ringbuf | 未完成 |
+| 2026-10 | [半夜的 502：一次 nginx upstream 排查](nginx-502-callback.md) | nginx · 502 · 慢查询 | 已结案 |
 
-## 写作原则 / Writing principles
+## 计划写的
 
-- 每篇笔记必须可复现，附完整命令 / reproducible with full commands
-- 先讲「为什么」，再写「怎么做」/ why before how
-- 踩过的坑单独一节 / always keep a pitfalls section
+| 主题 | 大概内容 | 卡在哪 |
+| :--- | :--- | :--- |
+| MySQL 索引失效 | 隐式转换、前缀索引、最左匹配 | 案例还没脱敏 |
+| Docker 网络模式 | bridge / host / macvlan 的取舍 | 想画个图，一直没画 |
+| vector 迁移 | 从 syslog 到 vector 的配置差异 | 写完一半 |
+| `ss -s` 会骗人 | 连接数统计口径问题 | 只记了现象，没查源码 |
 
-## 许可 / License
+## 写作约定
+
+- **可复现**：命令原样贴，跑不通的不写
+- **先因后果**：先说为什么，再说怎么做
+- **保留失败**：试错过程不删，别人可能也卡在那里
+- **不确定就说不确定**：没搞明白的直接写出来，不硬编结论
+
+## 许可
 
 CC BY 4.0
